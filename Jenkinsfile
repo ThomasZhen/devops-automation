@@ -13,7 +13,7 @@ pipeline {
         stage('Build docker image'){
             steps{
                 script{
-                    sh 'docker build -t thomaszhen/demo .'
+                    sh 'docker build -t thomaszhen/helloworld:1.0 .'
                 }
             }
         }
@@ -23,7 +23,7 @@ pipeline {
                    withCredentials([string(credentialsId: 'dockerhub-pwd', variable: 'dockerhubpwd')]) {
                    sh 'docker login -u thomaszhen -p ${dockerhubpwd}'
 }
-                   sh 'docker push thomaszhen/demo'
+                   sh 'docker push thomaszhen/helloworld:1.0'
                 }
             }
         }
