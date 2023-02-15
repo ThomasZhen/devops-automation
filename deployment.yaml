@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: springboot-kubernetes
-          image: thomaszhen/helloworld:1.0
+          image: thomaszhen/helloWorld:1.0
           # Image that will be used to containers in the cluster
           imagePullPolicy: IfNotPresent
           ports:
